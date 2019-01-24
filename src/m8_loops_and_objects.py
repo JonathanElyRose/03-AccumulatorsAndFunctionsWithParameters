@@ -17,6 +17,7 @@ def main():
     # Test your functions by putting calls to them here:
     #print_sequence1()
     draw_circles1()
+    #print_sequence2()
 
 
 def print_sequence1():
@@ -31,7 +32,7 @@ def print_sequence1():
        200
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement this function, per its doc-string above.
+    # DONE: 2. Implement this function, per its doc-string above.
     # Put a statement in  main  to test this function.
     # REQUIREMENT: You must use a   RANGE  statement to solve this problem.
     # -------------------------------------------------------------------------
@@ -62,21 +63,13 @@ def draw_circles1():
     print('Running draw_circles1:  See graphics window')
     print('--------------------------------------------------')
 
-    window = rg.TurtleWindow()
+    window = rg.RoseWindow(400, 400)
 
-    drawboi = rg.SimpleTurtle()
-    drawboi.pen = rg.Pen('black', 1)
-    drawboi.pen_up()
-    drawboi.go_to(rg.Point(200, 200))
-    drawboi.pen_down()
+    circle = rg.Circle(rg.Point(200, 200), 0)
+    circle.attach_to(window)
 
     for k in range(21):
-        drawboi.draw_circle(k * 10)
-        drawboi.pen_up()
-        drawboi.right(90)
-        drawboi.forward(10)
-        drawboi.left(90)
-        drawboi.pen_down()
+        circle = rg.Circle(rg.Point(200, 200), k * 10)
 
 
     window.close_on_mouse_click()
@@ -94,7 +87,7 @@ def print_sequence2():
       390.
     """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement this function, per its doc-string above.
+    # DONE: 4. Implement this function, per its doc-string above.
     # Put a statement in  main  to test this function.
     # REQUIREMENT: You must use a   RANGE  statement to solve this problem.
     # -------------------------------------------------------------------------
@@ -102,6 +95,12 @@ def print_sequence2():
     print('--------------------------------------------------')
     print('Running print_sequence2:')
     print('--------------------------------------------------')
+
+    total = 50
+    for k in range(18):
+        print(total)
+        total = total + 20
+
 
 
 def draw_circles2():
@@ -123,6 +122,8 @@ def draw_circles2():
     print('--------------------------------------------------')
     print('Running draw_circles2:  See graphics window')
     print('--------------------------------------------------')
+
+
 
 
 def print_sequence3():
