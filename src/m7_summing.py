@@ -7,6 +7,7 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher, Mark Hays,
          Aaron Wilkin, their colleagues, and Jonathan Ely.
 """  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
+import math
 
 def main():
     """ Calls the   TEST   functions in this module. """
@@ -17,7 +18,7 @@ def main():
 def run_test_sum_cosines():
     """ Tests the   sum_cosines   function. """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement this function.
+    # DONE: 2. Implement this function.
     #   It TESTS the  sum_cosines  function defined below.
     #   Include at least **   3   ** tests.
     #
@@ -29,20 +30,20 @@ def run_test_sum_cosines():
     print('Testing the   sum_cosines   function:')
     print('--------------------------------------------------')
     # Test 1:
-    expected = 11.854408
-    answer = sum_square_roots(5)
+    expected = -.5194806475
+    answer = sum_cosines(4)
     print('Test 1 expected:', expected)
     print('       actual:  ', answer)
 
     # Test 2:
-    expected = 23.06016710
-    answer = sum_square_roots(8)
+    expected = -.4174477460
+    answer = sum_cosines(10)
     print('Test 2 expected:', expected)
     print('       actual:  ', answer)
 
     # Test 3:
-    expected = 57.23208668
-    answer = sum_square_roots(15)
+    expected = 1.537985961
+    answer = sum_cosines(1000)
     print('Test 3 expected:', expected)
     print('       actual:  ', answer)
 
@@ -58,14 +59,17 @@ def sum_cosines(n):
         cos(0) + cos(1) + cos(2) + cos(3)   which is about 0.13416.
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #   That is called TEST-DRIVEN DEVELOPMENT (TDD).
     #
     #   No fair running the code of  sum_cosines  to GENERATE
     #   test cases; that would defeat the purpose of TESTING!
     # -------------------------------------------------------------------------
-
+    total = 0
+    for k in range(n+1):
+        total = total + math.cos(k)
+    return total
 
 def run_test_sum_square_roots():
     """ Tests the   sum_square_roots   function. """
